@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Poppins } from 'next/font/google';
 import SideBar from '@/components/SideBar';
+import NavBar from '@/components/NavBar';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -22,12 +23,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} bg-darkerBlue overflow-x-hidden grid grid-cols-5`}
+        className={`${poppins.variable} bg-darkerBlue overflow-x-hidden flex flex-col md:grid md:grid-cols-5`}
       >
-        <div className="col-span-1">
+        <div className="hidden md:block md:col-span-1">
           <SideBar />
         </div>
-        <div className="col-span-4">{children}</div>
+        <div className='md:hidden'>
+          <NavBar />
+        </div>
+        <div className="md:col-span-4">{children}</div>
       </body>
     </html>
   );
