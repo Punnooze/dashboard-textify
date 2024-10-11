@@ -21,9 +21,9 @@ export default function SideBar() {
 
   return (
     <div className=" h-[100vh] bg-bgDarkBlue text-textGrey py-[20px] flex flex-col justify-between">
-      <div className="bg-accentPurple rounded-md overflow-clip h-[80px] ml-[20px] flex items-center">
+      <div className="bg-accentPurple rounded-md overflow-clip h-[80px] ml-[20px] flex items-center justify-center lg:justify-normal">
         <Image height={80} src={logo} alt="logo" />
-        <p className="font-bold ml-[20px] text-[40px]">Textify AI</p>
+        <p className="hidden lg:block font-bold ml-[20px] lg:text-[18px] xl:text-[30px]">Textify AI</p>
       </div>
 
       <div className="ml-[20px] flex flex-col mt-[60px]">
@@ -34,8 +34,8 @@ export default function SideBar() {
           } rounded-md rounded-l-none  p-[10px] mb-[20px] flex justify-center items-center`}
         >
           <div className="flex justify-start w-full pl-[40px] items-center">
-            <IoHomeSharp className="mr-[30px] text-[18px]" />
-            <p className="">Home</p>
+            <IoHomeSharp className="mr-[30px] text-[24px] lg:text-[18px]" />
+            <p className="hidden lg:block">Home</p>
           </div>
         </button>
         <button
@@ -45,8 +45,8 @@ export default function SideBar() {
           } rounded-md rounded-l-none  p-[10px] mb-[20px] flex justify-center items-center`}
         >
           <div className="flex justify-start w-full pl-[40px] items-center">
-            <TbDeviceDesktopAnalytics className="mr-[30px] text-[18px]" />
-            <p className="">Analytics</p>
+            <TbDeviceDesktopAnalytics className="mr-[30px] text-[24px] lg:text-[18px]" />
+            <p className="hidden lg:block">Analytics</p>
           </div>
         </button>
         <button
@@ -56,8 +56,8 @@ export default function SideBar() {
           } rounded-md rounded-l-none  p-[10px] mb-[20px] flex justify-center items-center`}
         >
           <div className="flex justify-start w-full pl-[40px] items-center">
-            <FaUser className="mr-[30px] text-[18px]" />
-            <p className="">User Profile</p>
+            <FaUser className="mr-[30px] text-[24px] lg:text-[18px]" />
+            <p className="hidden lg:block">User Profile</p>
           </div>
         </button>
         <button
@@ -67,8 +67,8 @@ export default function SideBar() {
           } rounded-md rounded-l-none  p-[10px] mb-[20px] flex justify-center items-center`}
         >
           <div className="flex justify-start w-full pl-[40px] items-center">
-            <IoSettingsSharp className="mr-[30px] text-[18px]" />
-            <p className="">Settings</p>
+            <IoSettingsSharp className="mr-[30px] text-[24px] lg:text-[18px]" />
+            <p className="hidden lg:block">Settings</p>
           </div>
         </button>
         <button
@@ -79,17 +79,17 @@ export default function SideBar() {
             <Avatar className="mr-[20px]">
               <AvatarFallback className="bg-accentPurple">PP</AvatarFallback>
             </Avatar>
-            <div className="flex flex-col items-start">
+            <div className="md:flex flex-col items-start hidden ">
               <p className="text-[16px]">Punnoose Punnen</p>
-              <p className="text-[12px]">Account Settings</p>
+              <p className="text-[12px] hidden xl:block">Account Settings</p>
             </div>
           </div>
         </button>
 
         <button className="duration-100  hover:bg-darkerBlue/60  rounded-md  p-[10px] mb-[20px] flex justify-center items-center ">
           <div className="flex justify-start w-full pl-[40px] items-center">
-            <MdLogout className="mr-[30px] text-[18px]" />
-            <p className="">Logout</p>
+            <MdLogout className="mr-[30px] text-[24px] lg:text-[18px]" />
+            <p className="hidden lg:block">Logout</p>
           </div>
         </button>
       </div>

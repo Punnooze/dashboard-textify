@@ -11,20 +11,23 @@ export default function Home() {
     <div className=" flex flex-col lg:grid lg:grid-cols-4 bg-bgLightBlue rounded-xl overflow-x-clip">
       <div className=" p-[20px] lg:pr-[10px] col-span-3  ">
         <div className="w-full text-white mb-[30px]">
-          <p className="text-[40px]">Welcome to your Dashboard!</p>
-          <p className="text-[12px] ">view data</p>
+          <p className="hidden md:block text-[40px]">
+            Welcome to your Dashboard!
+          </p>
+          <p className="text-[40px]">Welcome</p>
+          <p className="text-[14px] md:text-[12px] ">view data</p>
         </div>
 
-        <div className=" grid grid-cols-3 gap-4 h-[100px] mb-[20px]">
+        <div className=" grid grid-cols-2 md:grid-cols-3 gap-4 h-[150px] xl:h-[100px] mb-[20px]">
           <div className="bg-darkerBlue rounded-xl px-[20px] py-[10px]">
             <div className="flex justify-between items-center">
               <p>Monthly Revenue</p>
-              <button className="bg-textGrey rounded-full p-[3px] text-darkerBlue">
+              <button className="hidden xl:block bg-textGrey rounded-full p-[3px] text-darkerBlue">
                 <PiDotsThreeBold />
               </button>
             </div>
-            <div className="flex items-center">
-              <p className="text-[34px] text-green font-bold mr-[10px]">
+            <div className="flex xl:items-center flex-col xl:flex-row">
+              <p className="text-[24px]  md:text-[34px] text-green font-bold my-[10px] md:my-0 md:mr-[10px]">
                 ₹22,390
               </p>
               <div className="bg-green/20 flex items-center justify-center p-[2px] px-[5px] rounded-sm border-[1px] border-green h-[22px] text-green">
@@ -37,12 +40,14 @@ export default function Home() {
           <div className="bg-darkerBlue rounded-xl px-[20px] py-[10px]">
             <div className="flex justify-between items-center">
               <p>New Customers</p>
-              <button className="bg-textGrey rounded-full p-[3px] text-darkerBlue">
+              <button className="hidden xl:block bg-textGrey rounded-full p-[3px] text-darkerBlue">
                 <PiDotsThreeBold />
               </button>
             </div>
-            <div className="flex items-center">
-              <p className="text-[34px] text-green font-bold mr-[10px]">623</p>
+            <div className="flex xl:items-center flex-col xl:flex-row">
+              <p className="text-[24px] md:text-[34px] text-green font-bold my-[10px] md:my-0 md:mr-[10px]">
+                623
+              </p>
               <div className="bg-green/20 flex items-center justify-center p-[2px] px-[5px] rounded-sm border-[1px] border-green h-[22px] text-green">
                 <FaCaretUp />
                 <p className="text-[12px]">9%</p>
@@ -50,15 +55,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-darkerBlue rounded-xl px-[20px] py-[10px]">
+          <div className="hidden md:block bg-darkerBlue rounded-xl px-[20px] py-[10px]">
             <div className="flex justify-between items-center">
               <p>Monthly Orders</p>
-              <button className="bg-textGrey rounded-full p-[3px] text-darkerBlue">
+              <button className="hidden xl:block bg-textGrey rounded-full p-[3px] text-darkerBlue">
                 <PiDotsThreeBold />
               </button>
             </div>
-            <div className="flex items-center">
-              <p className="text-[34px] text-red font-bold mr-[10px]">158</p>
+            <div className="flex xl:items-center flex-col xl:flex-row">
+              <p className="text-[24px] md:text-[34px] text-red font-bold my-[10px] md:my-0 md:mr-[10px]">
+                158
+              </p>
               <div className="bg-red/20 flex items-center justify-center p-[2px] px-[5px] rounded-sm border-[1px] border-red h-[22px] text-red">
                 <FaCaretDown />
                 <p className="text-[12px]">12%</p>
@@ -72,6 +79,44 @@ export default function Home() {
             <BarChart />
           </div>
         </div>
+
+        <div className=" xl:hidden bg-darkerBlue p-[20px] rounded-lg mb-[20px]">
+          <p className="mb-[20px] text-[24px]">Order Status</p>
+          <div className="flex justify-between items-center px-[20px]">
+            <DoughnutChart dougnutData={dougnutData} />
+            <div className="mt-[10px]">
+              <div className="flex items-center">
+                <div className="w-[15px] h-[15px] bg-[#FFCE56] rounded-full mr-[10px]"></div>
+                <p>Processing-</p>
+                <span className="ml-[5px] text-[18px] font-bold">
+                  {dougnutData[0]}
+                </span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-[15px] h-[15px] bg-[#36A2EB] rounded-full mr-[10px]"></div>
+                <p>In Transit- </p>
+                <span className="ml-[5px] text-[18px] font-bold">
+                  {dougnutData[1]}
+                </span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-[15px] h-[15px] bg-[#4BC0C0] rounded-full mr-[10px]"></div>
+                <p>Delivered- </p>
+                <span className="ml-[5px] text-[18px] font-bold">
+                  {dougnutData[2]}
+                </span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-[15px] h-[15px] bg-[#FF6384] rounded-full mr-[10px]"></div>
+                <p>Cancelled- </p>
+                <span className="ml-[5px] text-[18px] font-bold">
+                  {dougnutData[3]}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-darkerBlue p-[20px] rounded-xl">
           <p className="mb-[20px] text-[22px]">Recent Orders</p>
           <DataTable columns={columns} data={data} />
@@ -84,9 +129,9 @@ export default function Home() {
           <p className="mb-[20px] text-[14px] text-lightGray/50">
             (Compared to Previous Day)
           </p>
-          <div className="flex justify-between">
+          <div className="flex justify-between flex-col xl:flex-row">
             <p className="text-[45px]">₹1650</p>
-            <div className="flex items-center ">
+            <div className="flex items-center">
               <div className="flex items-center text-green bg-green/20 p-[3px] px-[6px] rounded-sm">
                 <FaCaretUp className="text-[20px] mr-[5px]" />
                 <p>₹450</p>
@@ -100,7 +145,7 @@ export default function Home() {
           <p className="mb-[20px] text-[14px] text-lightGray/50">
             (Compared to Previous Day)
           </p>
-          <div className="flex justify-between">
+          <div className="flex justify-between flex-col xl:flex-row">
             <p className="text-[45px]">36</p>
             <div className="flex items-center">
               <div className="flex items-center text-red bg-red/20 p-[3px] px-[6px] rounded-sm">
@@ -111,7 +156,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-darkerBlue p-[20px] rounded-lg mb-[20px]">
+        <div className="hidden xl:block bg-darkerBlue p-[20px] rounded-lg mb-[20px]">
           <p className="mb-[20px] text-[24px]">Order Status</p>
           <DoughnutChart dougnutData={dougnutData} />
           <div className="mt-[10px]">
@@ -145,9 +190,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-darkerBlue p-[20px] rounded-lg mb-[20px]">
+
+        <div className="hidden md:block bg-darkerBlue p-[20px] rounded-lg mb-[20px]">
           <p className="text-[18px]">Average Order Value</p>
-          <p className='text-lightGray/50 text-[14px]'>(Comparing to Previous Week)</p>
+          <p className="text-lightGray/50 text-[14px]">
+            (Comparing to Previous Week)
+          </p>
           <p className="text-[60px]">₹360</p>
 
           <div className=" flex items-center">
