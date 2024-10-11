@@ -17,7 +17,7 @@ module.exports = {
         bgLightBlue: '#27324B',
         darkerBlue: '#1C2434',
         darkBlue: '#0A0F23',
-        highlightBlue: '#4F86F8',
+        chartBlue: '#36A2EB',
         white: '#FFFFFF',
         accentPurple: '#784FFE',
         lightBlue: '#7AABFF',

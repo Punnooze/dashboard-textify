@@ -1,27 +1,32 @@
 'use client';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { dougnutData } from '@/utils/data';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function DoughnutChart() {
+interface DoughnutProps {
+  dougnutData: number[]; // Expecting an array of numbers
+}
+
+export default function DoughnutChart({ dougnutData }: DoughnutProps) {
   const data = {
-    labels: ['Placed', 'In Transit', 'Delivered', 'Cancelled'],
+    labels: ['Processing', 'In Transit', 'Delivered', 'Cancelled'],
     datasets: [
       {
         label: 'Poll',
-        data: [3, 6, 4, 5],
+        data: dougnutData,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
+          'rgba(255, 206, 86, 0.5)',
+          'rgba(54, 162, 235, 0.5)',
+          'rgba(75, 192, 192, 0.5)',
+          'rgba(255, 99, 132, 0.5)',
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
+          'rgba(54, 162, 235, 1)',
           'rgba(75, 192, 192, 1)',
+          'rgba(255, 99, 132, 1)',
         ],
       },
     ],
