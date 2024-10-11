@@ -1,6 +1,6 @@
 export default function SideBar() {
   return (
-    <div className=" h-[100vh] bg-highlightBlue">
+    <div className=" h-[100vh] bg-bgDarkBlue">
       <div>Logo</div>
       <div>
         <div>Home</div>
