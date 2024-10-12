@@ -1,5 +1,4 @@
 'use client';
-import DoughnutChart from '@/components/DoughnutChart';
 import ActivityTable from '@/components/ActivityTable';
 import { PiDotsThreeBold } from 'react-icons/pi';
 
