@@ -9,10 +9,10 @@ interface UserActivity {
 
 interface SelectedProps {
   selectedId: string | null;
+  data: UserActivity[];
 }
-import { userActivity } from '../utils/data';
 
-export default function ActivityTable({ selectedId }: SelectedProps) {
+export default function ActivityTable({ selectedId, data }: SelectedProps) {
   return (
     <div className="overflow-x-auto border-textGrey border border-textGrey-gray-200 rounded-xl rounded-r-none h-[400px] text-[12px] md:text-[14px] lg:text-[16px]">
       <table className="min-w-full">
@@ -36,7 +36,7 @@ export default function ActivityTable({ selectedId }: SelectedProps) {
           </tr>
         </thead>
         <tbody>
-          {userActivity
+          {data
             .filter((activity: UserActivity) =>
               selectedId ? activity.userId === selectedId : true
             )

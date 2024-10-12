@@ -11,6 +11,10 @@ import Image from 'next/image';
 import logo from '../public/logo-removebg-preview.png';
 
 export default function SideBar() {
+  const toggleDarkMode = () => {
+    document.documentElement.classList.toggle('dark');
+  };
+
   const router = useRouter();
   const pathname = usePathname();
   const [path, setPath] = useState('/');
@@ -87,6 +91,7 @@ export default function SideBar() {
             </div>
           </div>
         </button>
+        <button onClick={() => toggleDarkMode()}>Toggle Dark Mode</button>
 
         <button className="duration-100  hover:bg-darkerBlue/60  rounded-md  p-[10px] mb-[20px] flex justify-center items-center ">
           <div className="flex justify-start w-full pl-[20px] items-center">

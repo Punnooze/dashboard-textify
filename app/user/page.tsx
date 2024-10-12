@@ -1,7 +1,7 @@
 'use client';
 import ActivityTable from '@/components/ActivityTable';
 import { PiDotsThreeBold } from 'react-icons/pi';
-
+import { userActivity } from '../../utils/data';
 import { users } from '../../utils/data';
 import { IoSearchSharp } from 'react-icons/io5';
 import {
@@ -56,7 +56,7 @@ export default function Page() {
             </div>
           </div>
 
-          <ActivityTable selectedId={userId} />
+          <ActivityTable data={userActivity} selectedId={userId} />
         </div>
       </div>
       <div className="flex flex-col gap-[20px] col-span-2 lg:col-span-1">
