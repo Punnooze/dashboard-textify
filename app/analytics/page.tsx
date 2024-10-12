@@ -33,7 +33,7 @@ export default function page() {
             </div>
             <div className="flex items-center">
               <div className="bg-chartGreen h-[15px] w-[15px] rounded-full mr-[10px]"></div>
-              <p>36 45 years </p>
+              <p>36 - 45 years </p>
               <p className="ml-[5px] font-bold">8</p>
             </div>
             <div className="flex items-center">
@@ -100,7 +100,7 @@ export default function page() {
             </div>
           </div>
         </div>
-        <div className="bg-darkerBlue rounded-xl md:col-span-3 flex flex-col justify-between p-[20px]">
+        <div className="bg-darkerBlue rounded-xl md:col-span-3 hidden md:flex flex-col justify-between p-[20px]">
           <p className="text-[22px] mb-[20px]">Sales of Each Category</p>
           <div className="h-full">
             <LineChart />

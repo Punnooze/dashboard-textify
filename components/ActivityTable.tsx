@@ -14,7 +14,7 @@ import { userActivity } from '../utils/data';
 
 export default function ActivityTable({ selectedId }: SelectedProps) {
   return (
-    <div className="overflow-x-auto border-textGrey border border-textGrey-gray-200 rounded-xl rounded-r-none h-[400px] ">
+    <div className="overflow-x-auto border-textGrey border border-textGrey-gray-200 rounded-xl rounded-r-none h-[400px] text-[12px] md:text-[14px] lg:text-[16px]">
       <table className="min-w-full">
         <thead className="bg-gray-100">
           <tr>

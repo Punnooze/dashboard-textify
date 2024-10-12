@@ -37,7 +37,7 @@ export default function Page() {
 
   return (
     <div className="bg-bgLightBlue p-[20px] rounded-xl grid grid-cols-4 gap-[20px]">
-      <div className="col-span-3 ">
+      <div className="col-span-4 lg:col-span-3 ">
         <p id="activityTable" className="text-[36px] mb-[20px]">
           User Profiles
         </p>
@@ -60,8 +60,8 @@ export default function Page() {
           <ActivityTable selectedId={userId} />
         </div>
       </div>
-      <div className="flex flex-col gap-[20px]">
-        <div className="bg-darkerBlue p-[20px] rounded-xl">
+      <div className="flex flex-col gap-[20px] col-span-2 lg:col-span-1">
+        <div className="hidden lg:block bg-darkerBlue p-[20px] rounded-xl">
           <p className="text-[22px] mb-[10px]">Active Customers</p>
           <CountUp
             start={0}
@@ -71,7 +71,9 @@ export default function Page() {
           />
         </div>
         <div className="bg-darkerBlue p-[20px] rounded-xl">
-          <p className="text-[22px] mb-[10px]">User Engagement</p>
+          <p className="col-span-2 md:col-span-1 text-[22px] mb-[10px]">
+            User Engagement
+          </p>
           <PieChart
             pieLabels={['New', 'Returning', 'Inactive']}
             pieData={[10, 5, 9]}
@@ -79,52 +81,51 @@ export default function Page() {
           <div className="mt-[20px]">
             <div className="flex items-center">
               <div className="w-[15px] h-[15px] rounded-full bg-chartYellow mr-[10px]"></div>
-              <p>
+              <p className="text-[14px] md:text-[16px]">
                 New Users - <span className="font-bold">10</span>
               </p>
             </div>
             <div className="flex items-center">
               <div className="w-[15px] h-[15px] rounded-full bg-chartBlue mr-[10px]"></div>
-              <p>
+              <p className="text-[13px] md:text-[16px]">
                 Returning Users - <span className="font-bold">5</span>
               </p>
             </div>
             <div className="flex items-center">
               <div className="w-[15px] h-[15px] rounded-full bg-chartGreen mr-[10px]"></div>
-              <p>
+              <p className="text-[14px] md:text-[16px]">
                 Inactive Users - <span className="font-bold">9</span>
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-darkerBlue p-[20px] rounded-xl flex flex-col ">
-        <p className="mb-[20px] text-[22px]">Active vs Inactive Users</p>
+      <div className="bg-darkerBlue p-[20px] rounded-xl flex flex-col col-span-2 lg:col-span-1">
+        <p className="mb-[20px] text-[16] lg:text-[22px]">
+          Active vs Inactive Users
+        </p>
         <div className="mb-[20px]">
-          <DoughnutChart
-            doughnutLabels={['Active', 'Inactive']}
-            dougnutData={[18, 15]}
-          />
+          <PieChart pieLabels={['Active', 'Inactive']} pieData={[15, 9]} />
         </div>
 
         <div className="">
           <div className="flex items-center ">
             <div className="h-[15px] w-[15px] rounded-full bg-chartYellow mr-[10px]"></div>
-            <p>
-              Active Users - <span>18</span>
+            <p className="text-[14px] md:text-[16px]">
+              Active Users - <span>15</span>
             </p>
           </div>
           <div className="flex items-center ">
             <div className="h-[15px] w-[15px] rounded-full bg-chartBlue mr-[10px]"></div>
-            <p>
-              Inactive Users - <span>15</span>
+            <p className="text-[14px] md:text-[16px]">
+              Inactive Users - <span>9</span>
             </p>
           </div>
         </div>
       </div>
-      <div className="col-span-3 bg-darkerBlue p-[20px] rounded-xl ">
+      <div className="col-span-4 lg:col-span-3 bg-darkerBlue p-[20px] rounded-xl ">
         <p className="text-[22px] mb-[20px] ">User Details</p>
-        <div className="overflow-x-auto rounded-xl rounded-r-none border-textGrey border border-textGrey-textGrey overflow-y-auto h-[350px]">
+        <div className="overflow-x-auto rounded-xl rounded-r-none border-textGrey border border-textGrey-textGrey overflow-y-auto h-[350px] text-[12px] md:text-[14px] lg:text-[16px]">
           <table className="min-w-full  border border-textGrey-accentPurple">
             <thead className="bg-textGrey">
               <tr>

@@ -12,12 +12,11 @@ export default function Home() {
   return (
     <div className=" flex flex-col lg:grid lg:grid-cols-4 bg-bgLightBlue rounded-xl overflow-x-clip">
       <div className=" p-[20px] lg:pr-[10px] col-span-3  ">
-        <div className="w-full text-white mb-[30px]">
+        <div className="w-full text-white mb-[20px]">
           <p className="hidden md:block text-[40px]">
             Welcome to your Dashboard!
           </p>
           <p className="text-[40px] md:hidden">Welcome</p>
-          <p className="text-[14px] md:text-[12px] ">view data</p>
         </div>
 
         <div className=" grid grid-cols-2 md:grid-cols-3 gap-4 h-[150px] xl:h-[100px] mb-[20px]">
@@ -144,8 +143,8 @@ export default function Home() {
               <CountUp
                 start={0}
                 end={1650}
-                decimals={0} // To have one decimal place
-                duration={1.5} // Duration of the count-up animation (in seconds)
+                decimals={0} 
+                duration={1.5} 
                 prefix="₹"
               />
             </p>
@@ -168,8 +167,8 @@ export default function Home() {
               <CountUp
                 start={0}
                 end={36}
-                decimals={0} // To have one decimal place
-                duration={2} // Duration of the count-up animation (in seconds)
+                decimals={0} 
+                duration={2} 
               />
             </p>
             <div className="flex items-center">
@@ -224,7 +223,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hidden md:block bg-darkerBlue p-[20px] rounded-lg mb-[20px]">
+        <div className="hidden md:block bg-darkerBlue p-[20px] pb-[35px] rounded-lg mb-[5px]">
           <p className="text-[18px]">Average Order Value</p>
           <p className="text-lightGray/50 text-[14px]">
             (Comparing to Previous Week)
