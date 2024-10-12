@@ -1,7 +1,5 @@
 'use client';
 import DoughnutChart from '@/components/DoughnutChart';
-import { data } from '../../utils/data';
-import { columns } from '../../utils/columns';
 import ActivityTable from '@/components/ActivityTable';
 import { PiDotsThreeBold } from 'react-icons/pi';
 // import UsersTable from '@/components/UsersTable';
