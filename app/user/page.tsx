@@ -1,5 +1,10 @@
 export default function page() {
   return (
-    <div>page</div>
+    <div className="bg-bgLightBlue p-[20px] rounded-xl">
+      <div>
+        
+
+      </div>
+    </div>
   )
 }

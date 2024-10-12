@@ -84,7 +84,7 @@ export default function Home() {
 
         <div className=" xl:hidden bg-darkerBlue p-[20px] rounded-lg mb-[20px]">
           <p className="mb-[20px] text-[24px]">Order Status</p>
-          <div className="flex justify-between items-center px-[20px]">
+          <div className="flex-col md:flex-row flex justify-between items-center px-[20px]">
             <DoughnutChart
               dougnutData={dougnutData}
               doughnutLabels={[
