@@ -39,3 +39,41 @@ export const columns: ColumnDef<Payment>[] = [
     header: 'Status',
   },
 ];
+
+// Define Product type that matches the table structure
+export type Product = {
+  id: string;
+  productName: string;
+  category: string;
+  price: number;
+  stockRemaining: number;
+  stockStatus: string;
+};
+
+// Assuming columns2 is built on this type
+export const columns2: ColumnDef<Product>[] = [
+  {
+    accessorKey: 'id',
+    header: 'ID',
+  },
+  {
+    accessorKey: 'productName',
+    header: 'Product Name',
+  },
+  {
+    accessorKey: 'category',
+    header: 'Category',
+  },
+  {
+    accessorKey: 'price',
+    header: 'Price',
+  },
+  {
+    accessorKey: 'stockRemaining',
+    header: 'Stock Remaining',
+  },
+  {
+    accessorKey: 'stockStatus',
+    header: 'Stock Status',
+  },
+];

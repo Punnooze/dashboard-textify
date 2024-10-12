@@ -1,3 +1,4 @@
+'use client';
 import { data, dougnutData } from '@/utils/data';
 import { DataTable } from '@/components/DataTable';
 import { PiDotsThreeBold } from 'react-icons/pi';
@@ -5,6 +6,7 @@ import { columns } from '@/utils/columns';
 import DoughnutChart from '@/components/DoughnutChart';
 import BarChart from '@/components/BarChart';
 import { FaCaretUp, FaCaretDown } from 'react-icons/fa';
+import CountUp from 'react-countup';
 
 export default function Home() {
   return (
@@ -14,7 +16,7 @@ export default function Home() {
           <p className="hidden md:block text-[40px]">
             Welcome to your Dashboard!
           </p>
-          <p className="text-[40px]">Welcome</p>
+          <p className="text-[40px] md:hidden">Welcome</p>
           <p className="text-[14px] md:text-[12px] ">view data</p>
         </div>
 
@@ -83,31 +85,39 @@ export default function Home() {
         <div className=" xl:hidden bg-darkerBlue p-[20px] rounded-lg mb-[20px]">
           <p className="mb-[20px] text-[24px]">Order Status</p>
           <div className="flex justify-between items-center px-[20px]">
-            <DoughnutChart dougnutData={dougnutData} />
+            <DoughnutChart
+              dougnutData={dougnutData}
+              doughnutLabels={[
+                'Processing',
+                'In Transit',
+                'Delivered',
+                'Cancelled',
+              ]}
+            />
             <div className="mt-[10px]">
               <div className="flex items-center">
-                <div className="w-[15px] h-[15px] bg-[#FFCE56] rounded-full mr-[10px]"></div>
+                <div className="w-[15px] h-[15px] bg-chartYellow rounded-full mr-[10px]"></div>
                 <p>Processing-</p>
                 <span className="ml-[5px] text-[18px] font-bold">
                   {dougnutData[0]}
                 </span>
               </div>
               <div className="flex items-center">
-                <div className="w-[15px] h-[15px] bg-[#36A2EB] rounded-full mr-[10px]"></div>
+                <div className="w-[15px] h-[15px] bg-chartBlue rounded-full mr-[10px]"></div>
                 <p>In Transit- </p>
                 <span className="ml-[5px] text-[18px] font-bold">
                   {dougnutData[1]}
                 </span>
               </div>
               <div className="flex items-center">
-                <div className="w-[15px] h-[15px] bg-[#4BC0C0] rounded-full mr-[10px]"></div>
+                <div className="w-[15px] h-[15px] bg-chartGreen rounded-full mr-[10px]"></div>
                 <p>Delivered- </p>
                 <span className="ml-[5px] text-[18px] font-bold">
                   {dougnutData[2]}
                 </span>
               </div>
               <div className="flex items-center">
-                <div className="w-[15px] h-[15px] bg-[#FF6384] rounded-full mr-[10px]"></div>
+                <div className="w-[15px] h-[15px] bg-chartRed rounded-full mr-[10px]"></div>
                 <p>Cancelled- </p>
                 <span className="ml-[5px] text-[18px] font-bold">
                   {dougnutData[3]}
@@ -130,7 +140,15 @@ export default function Home() {
             (Compared to Previous Day)
           </p>
           <div className="flex justify-between flex-col xl:flex-row">
-            <p className="text-[45px]">₹1650</p>
+            <p className="text-[45px]">
+              <CountUp
+                start={0}
+                end={1650}
+                decimals={0} // To have one decimal place
+                duration={1.5} // Duration of the count-up animation (in seconds)
+                prefix="₹"
+              />
+            </p>
             <div className="flex items-center">
               <div className="flex items-center text-green bg-green/20 p-[3px] px-[6px] rounded-sm">
                 <FaCaretUp className="text-[20px] mr-[5px]" />
@@ -146,7 +164,14 @@ export default function Home() {
             (Compared to Previous Day)
           </p>
           <div className="flex justify-between flex-col xl:flex-row">
-            <p className="text-[45px]">36</p>
+            <p className="text-[45px]">
+              <CountUp
+                start={0}
+                end={36}
+                decimals={0} // To have one decimal place
+                duration={2} // Duration of the count-up animation (in seconds)
+              />
+            </p>
             <div className="flex items-center">
               <div className="flex items-center text-red bg-red/20 p-[3px] px-[6px] rounded-sm">
                 <FaCaretDown className="text-[20px] mr-[5px]" />
@@ -158,31 +183,39 @@ export default function Home() {
 
         <div className="hidden xl:block bg-darkerBlue p-[20px] rounded-lg mb-[20px]">
           <p className="mb-[20px] text-[24px]">Order Status</p>
-          <DoughnutChart dougnutData={dougnutData} />
+          <DoughnutChart
+            dougnutData={dougnutData}
+            doughnutLabels={[
+              'Processing',
+              'In Transit',
+              'Delivered',
+              'Cancelled',
+            ]}
+          />
           <div className="mt-[10px]">
             <div className="flex items-center">
-              <div className="w-[15px] h-[15px] bg-[#FFCE56] rounded-full mr-[10px]"></div>
+              <div className="w-[15px] h-[15px] bg-chartYellow rounded-full mr-[10px]"></div>
               <p>Processing - </p>
               <span className="ml-[5px] text-[18px] font-bold">
                 {dougnutData[0]}
               </span>
             </div>
             <div className="flex items-center">
-              <div className="w-[15px] h-[15px] bg-[#36A2EB] rounded-full mr-[10px]"></div>
+              <div className="w-[15px] h-[15px] bg-chartBlue rounded-full mr-[10px]"></div>
               <p>In Transit - </p>
               <span className="ml-[5px] text-[18px] font-bold">
                 {dougnutData[1]}
               </span>
             </div>
             <div className="flex items-center">
-              <div className="w-[15px] h-[15px] bg-[#4BC0C0] rounded-full mr-[10px]"></div>
+              <div className="w-[15px] h-[15px] bg-chartGreen rounded-full mr-[10px]"></div>
               <p>Delivered - </p>
               <span className="ml-[5px] text-[18px] font-bold">
                 {dougnutData[2]}
               </span>
             </div>
             <div className="flex items-center">
-              <div className="w-[15px] h-[15px] bg-[#FF6384] rounded-full mr-[10px]"></div>
+              <div className="w-[15px] h-[15px] bg-chartRed rounded-full mr-[10px]"></div>
               <p>Cancelled - </p>
               <span className="ml-[5px] text-[18px] font-bold">
                 {dougnutData[3]}

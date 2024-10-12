@@ -23,15 +23,15 @@ export default function BarChart() {
       {
         label: 'Sales',
         data: monthlyData.map((item) => item.sales), // Sales data
-        backgroundColor: 'rgba(54, 162, 235, 0.5)', // Color for sales bars
+        backgroundColor: 'rgba(54, 162, 235, 0.6)', // Color for sales bars
         borderColor: 'rgba(54, 162, 235, 1)',
         borderWidth: 1,
       },
       {
         label: 'Profit',
         data: monthlyData.map((item) => item.profit), // Profit data
-        backgroundColor: 'rgba(255, 206, 86, 0.5)', // Color for profit bars
-        borderColor: 'rgba(255, 206, 86, 1)',
+        backgroundColor: 'rgba(153, 102, 255, 0.6)', // Color for profit bars
+        borderColor: 'rgba(153, 102, 255, 1)',
         borderWidth: 1,
       },
     ],

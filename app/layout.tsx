@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} bg-darkerBlue overflow-x-hidden flex flex-col md:grid md:grid-cols-5 h-[100vh] w-[100vw] `}
+        className={`${poppins.variable} bg-darkerBlue overflow-x-hidden flex flex-col md:grid md:grid-cols-7 h-[100vh] w-[100vw] `}
       >
         <div className="hidden md:block md:col-span-1">
           <SideBar />
@@ -31,7 +31,7 @@ export default function RootLayout({
         <div className="md:hidden">
           <NavBar />
         </div>
-        <div className="md:col-span-4 bg-bgDarkBlue text-textGrey p-[20px] overflow-y-auto">
+        <div className="md:col-span-6 bg-bgDarkBlue text-textGrey p-[20px] overflow-y-auto">
           {children}
         </div>
       </body>
