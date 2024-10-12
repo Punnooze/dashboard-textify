@@ -63,17 +63,12 @@ export default function BarChart2() {
     ],
   };
 
-  // Function to determine the legend position based on screen size
-  const getLegendPosition = (): 'top' | 'right' => {
-    return window.innerWidth < 768 ? 'top' : 'right'; // Adjust the width as per your breakpoint
-  };
-
   const optionsBar = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: getLegendPosition(), // Set legend position dynamically
+        position: 'top', // Set legend position dynamically
         labels: {
           color: 'rgba(209, 213, 219, 1)',
         },
