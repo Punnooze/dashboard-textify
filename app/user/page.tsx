@@ -2,7 +2,7 @@
 import DoughnutChart from '@/components/DoughnutChart';
 import ActivityTable from '@/components/ActivityTable';
 import { PiDotsThreeBold } from 'react-icons/pi';
-// import UsersTable from '@/components/UsersTable';
+
 import { users } from '../../utils/data';
 import { IoSearchSharp } from 'react-icons/io5';
 import {
@@ -21,11 +21,11 @@ interface User {
   userId: string;
   userName: string;
   email: string;
-  accountCreationDate: string; // Updated field
+  accountCreationDate: string;
   status: string;
 }
 
-export default function page() {
+export default function Page() {
   const [userId, setUserId] = useState<string | null>(null);
 
   const scrollToDiv = () => {
