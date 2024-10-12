@@ -68,7 +68,7 @@ export default function BarChart2() {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top', // Set legend position dynamically
+        position: 'top' as const, // Explicitly declare as a constant literal type
         labels: {
           color: 'rgba(209, 213, 219, 1)',
         },
