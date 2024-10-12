@@ -1,0 +1,29 @@
+'use client';
+
+export default function page() {
+  const scrollToDiv = () => {
+    const element = document.getElementById('here');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  return (
+    <div>
+      <button
+        onClick={scrollToDiv}
+        className="bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Scroll to Here
+      </button>
+
+      {/* Some content to create space for scrolling */}
+      <div style={{ height: '800px' }}></div>
+
+      <div id="here" className="bg-gray-200 p-4 rounded">
+        <h2 className="text-xl">You have scrolled here!</h2>
+        <p>This is the target div.</p>
+      </div>
+    </div>
+  );
+}

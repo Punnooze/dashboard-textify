@@ -22,22 +22,22 @@ export default function page() {
           />
           <div>
             <div className="flex items-center mt-[20px]">
-              <div className="bg-chartYellow h-[10px] w-[10px] rounded-full mr-[10px]"></div>
+              <div className="bg-chartYellow h-[15px] w-[15px] rounded-full mr-[10px]"></div>
               <p>16 - 25 years </p>
               <p className="ml-[5px] font-bold">18</p>
             </div>
             <div className="flex items-center">
-              <div className="bg-chartBlue h-[10px] w-[10px] rounded-full mr-[10px]"></div>
+              <div className="bg-chartBlue h-[15px] w-[15px] rounded-full mr-[10px]"></div>
               <p>26 - 35 years </p>
               <p className="ml-[5px] font-bold">15</p>
             </div>
             <div className="flex items-center">
-              <div className="bg-chartGreen h-[10px] w-[10px] rounded-full mr-[10px]"></div>
+              <div className="bg-chartGreen h-[15px] w-[15px] rounded-full mr-[10px]"></div>
               <p>36 45 years </p>
               <p className="ml-[5px] font-bold">8</p>
             </div>
             <div className="flex items-center">
-              <div className="bg-chartGreen h-[10px] w-[10px] rounded-full mr-[10px]"></div>
+              <div className="bg-chartRed h-[15px] w-[15px] rounded-full mr-[10px]"></div>
               <p>45+ years </p>
               <p className="ml-[5px] font-bold">2</p>
             </div>
@@ -52,22 +52,22 @@ export default function page() {
             />
             <div>
               <div className="flex items-center mt-[20px]">
-                <div className="bg-chartYellow h-[10px] w-[10px] rounded-full mr-[10px]"></div>
+                <div className="bg-chartYellow h-[15px] w-[15px] rounded-full mr-[10px]"></div>
                 <p>16 - 25 years </p>
                 <p className="ml-[5px] font-bold">18</p>
               </div>
               <div className="flex items-center">
-                <div className="bg-chartBlue h-[10px] w-[10px] rounded-full mr-[10px]"></div>
+                <div className="bg-chartBlue h-[15px] w-[15px] rounded-full mr-[10px]"></div>
                 <p>26 - 35 years </p>
                 <p className="ml-[5px] font-bold">15</p>
               </div>
               <div className="flex items-center">
-                <div className="bg-chartGreen h-[10px] w-[10px] rounded-full mr-[10px]"></div>
+                <div className="bg-chartGreen h-[15px] w-[15px] rounded-full mr-[10px]"></div>
                 <p>36 45 years </p>
                 <p className="ml-[5px] font-bold">8</p>
               </div>
               <div className="flex items-center">
-                <div className="bg-chartGreen h-[10px] w-[10px] rounded-full mr-[10px]"></div>
+                <div className="bg-chartGreen h-[15px] w-[15px] rounded-full mr-[10px]"></div>
                 <p>45+ years </p>
                 <p className="ml-[5px] font-bold">2</p>
               </div>

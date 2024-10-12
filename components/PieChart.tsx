@@ -1,25 +1,21 @@
 'use client';
-import { Doughnut } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-// import { dougnutData } from '@/utils/data';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-interface DoughnutProps {
-  dougnutData: number[];
-  doughnutLabels: string[]; // Expecting an array of numbers
+interface PieChartProps {
+  pieData: number[];
+  pieLabels: string[];
 }
 
-export default function DoughnutChart({
-  dougnutData,
-  doughnutLabels,
-}: DoughnutProps) {
+export default function PieChart({ pieData, pieLabels }: PieChartProps) {
   const data = {
-    labels: doughnutLabels,
+    labels: pieLabels,
     datasets: [
       {
         label: 'Poll',
-        data: dougnutData,
+        data: pieData,
         backgroundColor: [
           'rgba(255, 206, 86, 0.5)',
           'rgba(54, 162, 235, 0.5)',
@@ -42,15 +38,13 @@ export default function DoughnutChart({
     plugins: {
       legend: {
         display: false,
-        // position: 'top' as const, // Fixes TypeScript error by asserting the literal type
       },
     },
-    cutout: 70, // Use number instead of string for the cutout value
   };
 
   return (
-    <div className="">
-      <Doughnut data={data} options={options} />
+    <div>
+      <Pie data={data} options={options} />
     </div>
   );
 }

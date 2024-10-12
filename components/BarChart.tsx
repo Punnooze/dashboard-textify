@@ -42,7 +42,7 @@ export default function BarChart() {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'right' as const, // Legend on the right
+        position: 'top' as const, // Legend on the right
         labels: {
           color: 'rgba(209, 213, 219, 1)', // Legend text color to rgba(209, 213, 219, 1)
         },
