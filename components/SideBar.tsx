@@ -78,6 +78,7 @@ export default function SideBar() {
           </div>
         </button>
         <button
+          onClick={() => router.push('/settings')}
           className="
           rounded-md p-[10px] mb-[20px] flex justify-center items-center mt-[100px]"
         >
