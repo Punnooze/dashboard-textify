@@ -1,4 +1,5 @@
 'use client';
+import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -14,7 +15,41 @@ import { monthlyData } from '../utils/data';
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 export default function BarChart() {
-  // Your data in the form [{ sales, profit }]
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setIsDarkMode(isDark);
+    };
+
+    // Initial check
+    checkDarkMode();
+
+    // Add an event listener to monitor class changes
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true });
+
+    // Cleanup on unmount
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Determine colors based on dark mode
+  const salesBackgroundColor = isDarkMode
+    ? 'rgba(255, 159, 64, 0.6)' // Orange for dark mode
+    : 'rgba(54, 162, 235, 0.6)'; // Blue for light mode
+  const salesBorderColor = isDarkMode
+    ? 'rgba(255, 159, 64, 1)' // Dark mode border color
+    : 'rgba(54, 162, 235, 1)'; // Light mode border color
+
+  const profitBackgroundColor = isDarkMode
+    ? 'rgba(153, 102, 255, 0.6)' // Purple for dark mode
+    : 'rgba(75, 192, 192, 0.6)'; // Teal for light mode
+  const profitBorderColor = isDarkMode
+    ? 'rgba(153, 102, 255, 1)' // Dark mode border color
+    : 'rgba(75, 192, 192, 1)'; // Light mode border color
 
   // Map your data to the appropriate format for the chart
   const data = {
@@ -23,16 +58,18 @@ export default function BarChart() {
       {
         label: 'Sales',
         data: monthlyData.map((item) => item.sales), // Sales data
-        backgroundColor: 'rgba(54, 162, 235, 0.6)', // Color for sales bars
-        borderColor: 'rgba(54, 162, 235, 1)',
-        borderWidth: 1,
+        backgroundColor: salesBackgroundColor, // Color for sales bars
+        borderColor: salesBorderColor,
+        borderWidth: 2, // Increase the border width
+        hoverBorderWidth: 3, // Thicker border on hover
       },
       {
         label: 'Profit',
         data: monthlyData.map((item) => item.profit), // Profit data
-        backgroundColor: 'rgba(153, 102, 255, 0.6)', // Color for profit bars
-        borderColor: 'rgba(153, 102, 255, 1)',
-        borderWidth: 1,
+        backgroundColor: profitBackgroundColor, // Color for profit bars
+        borderColor: profitBorderColor,
+        borderWidth: 2, // Increase the border width
+        hoverBorderWidth: 3, // Thicker border on hover
       },
     ],
   };
@@ -42,9 +79,9 @@ export default function BarChart() {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top' as const, // Legend on the right
+        position: 'top' as const, // Legend on the top
         labels: {
-          color: 'rgba(209, 213, 219, 1)', // Legend text color to rgba(209, 213, 219, 1)
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', // Change legend text color
         },
       },
     },
@@ -52,7 +89,7 @@ export default function BarChart() {
       x: {
         beginAtZero: true, // Start x-axis at 0
         ticks: {
-          color: 'rgba(209, 213, 219, 1)', // X-axis labels text color to rgba(209, 213, 219, 1)
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', // X-axis labels text color
         },
       },
       y: {
@@ -60,10 +97,10 @@ export default function BarChart() {
         title: {
           display: true,
           text: 'Sales and Profit',
-          color: 'rgba(209, 213, 219, 1)',
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', // Y-axis title color
         },
         ticks: {
-          color: 'rgba(209, 213, 219, 1)',
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', // Y-axis labels text color
         },
       },
     },

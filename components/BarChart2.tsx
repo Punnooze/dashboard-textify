@@ -1,4 +1,5 @@
 'use client';
+import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -12,7 +13,6 @@ import {
 } from 'chart.js';
 import { productData } from '../utils/data';
 
-// Register the necessary chart elements
 ChartJS.register(
   LineElement,
   BarElement,
@@ -24,41 +24,69 @@ ChartJS.register(
 );
 
 export default function BarChart2() {
-  // Format the product performance data for the bar chart
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setIsDarkMode(isDark);
+    };
+
+    checkDarkMode();
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   const data2 = {
-    labels: productData.map((item) => item.month), // Months for the x-axis
+    labels: productData.map((item) => item.month),
     datasets: [
       {
         label: 'Oversized T-shirt Sales',
         data: productData.map((item) => item.oversizedTshirt.profit),
-        borderColor: 'rgba(54, 162, 235, 1)',
-        backgroundColor: 'rgba(54, 162, 235, 0.5)',
-        tension: 0,
-        fill: false,
+        borderColor: isDarkMode
+          ? 'rgba(255, 159, 64, 1)'
+          : 'rgba(75, 192, 192, 1)',
+        backgroundColor: isDarkMode
+          ? 'rgba(255, 159, 64, 0.6)'
+          : 'rgba(75, 192, 192, 0.6)',
+        borderWidth: 2, // Specify border width
       },
       {
         label: 'Shirt Sales',
         data: productData.map((item) => item.shirt.profit),
-        borderColor: 'rgba(255, 99, 132, 1)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        tension: 0,
-        fill: false,
+        borderColor: isDarkMode
+          ? 'rgba(255, 206, 86, 1)'
+          : 'rgba(54, 162, 235, 1)',
+        backgroundColor: isDarkMode
+          ? 'rgba(255, 206, 86, 0.6)'
+          : 'rgba(54, 162, 235, 0.6)',
+        borderWidth: 2, // Specify border width
       },
       {
         label: 'Pants Sales',
         data: productData.map((item) => item.pants.profit),
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.5)',
-        tension: 0,
-        fill: false,
+        borderColor: isDarkMode
+          ? 'rgba(75, 192, 192, 1)'
+          : 'rgba(255, 99, 132, 1)',
+        backgroundColor: isDarkMode
+          ? 'rgba(75, 192, 192, 0.6)'
+          : 'rgba(255, 99, 132, 0.6)',
+        borderWidth: 2, // Specify border width
       },
       {
         label: 'Hoodies Sales',
         data: productData.map((item) => item.hoodies.profit),
-        borderColor: 'rgba(153, 102, 255, 1)',
-        backgroundColor: 'rgba(153, 102, 255, 0.5)',
-        tension: 0,
-        fill: false,
+        borderColor: isDarkMode
+          ? 'rgba(153, 102, 255, 1)'
+          : 'rgba(255, 159, 64, 1)',
+        backgroundColor: isDarkMode
+          ? 'rgba(153, 102, 255, 0.6)'
+          : 'rgba(255, 159, 64, 0.6)',
+        borderWidth: 2, // Specify border width
       },
     ],
   };
@@ -68,9 +96,9 @@ export default function BarChart2() {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top' as const, // Explicitly declare as a constant literal type
+        position: 'top' as const,
         labels: {
-          color: 'rgba(209, 213, 219, 1)',
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
         },
       },
     },
@@ -78,7 +106,7 @@ export default function BarChart2() {
       x: {
         beginAtZero: true,
         ticks: {
-          color: 'rgba(209, 213, 219, 1)',
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
         },
       },
       y: {
@@ -86,10 +114,10 @@ export default function BarChart2() {
         title: {
           display: true,
           text: 'Sales and Profit',
-          color: 'rgba(209, 213, 219, 1)',
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
         },
         ticks: {
-          color: 'rgba(209, 213, 219, 1)',
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
         },
       },
     },

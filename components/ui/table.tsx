@@ -58,7 +58,7 @@ const TableRow = React.forwardRef<
   <tr
     ref={ref}
     className={cn(
-      'border-b transition-colors hover:bg-chartBlue/20 hover:text-white data-[state=selected]:bg-muted',
+      'border-b transition-colors hover:bg-chartBlue/20 dark:hover:bg-darkerBlue/30 hover:text-white data-[state=selected]:bg-muted',
       className
     )}
     {...props}
@@ -73,7 +73,7 @@ const TableHead = React.forwardRef<
   <th
     ref={ref}
     className={cn(
-      'h-10 px-2 text-left align-middle font-medium text-textGrey bg-chartBlue/50  [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] border-textGrey border-l-[1px] text-[18px]',
+      'h-10 px-2 text-left align-middle font-medium text-textGrey bg-chartBlue/50  dark:bg-darkerBlue  [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] border-textGrey border-l-[1px] text-[18px]',
       className
     )}
     {...props}
@@ -88,7 +88,7 @@ const TableCell = React.forwardRef<
   <td
     ref={ref}
     className={cn(
-      'p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] border-[1px] border-chartBlue/50',
+      'p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] border-[1px] border-chartBlue/50 dark:border-darkerBlue',
       className
     )}
     {...props}

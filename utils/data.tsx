@@ -4,7 +4,7 @@ import { Payment } from '@/utils/columns';
 export const data: Payment[] = [
   {
     id: '927fb34a',
-    userName: 'John Doe',
+    userName: 'Aviral Bansal',
     email: 'john.doe@example.com',
     date: '2024-09-12',
     amount: 300,
@@ -319,7 +319,7 @@ export const userActivity = [
     date: '2024-10-01',
     time: '10:30 AM',
     userId: '987654321',
-    userName: 'John Doe',
+    userName: 'Aviral Bansal',
     action: 'Order Placed',
     details: 'Order ID: #123456, $45.00',
   },
@@ -335,7 +335,7 @@ export const userActivity = [
     date: '2024-09-28',
     time: '08:45 PM',
     userId: '987654321',
-    userName: 'John Doe',
+    userName: 'Aviral Bansal',
     action: 'Account Updated',
     details: 'Changed email address',
   },
@@ -375,7 +375,7 @@ export const userActivity = [
     date: '2024-09-01',
     time: '01:15 PM',
     userId: '987654321',
-    userName: 'John Doe',
+    userName: 'Aviral Bansal',
     action: 'Product Reviewed',
     details: 'Reviewed "Smart TV"',
   },
@@ -403,13 +403,12 @@ export const userActivity = [
     action: 'Product Added to Cart',
     details: '"4K Monitor"',
   },
-
 ];
 
 export const users = [
   {
     userId: '987654321',
-    userName: 'John Doe',
+    userName: 'Aviral Bansal',
     email: 'john@example.com',
     accountCreationDate: '2023-01-15',
     status: 'Active',
@@ -457,7 +456,6 @@ export const users = [
     status: 'Active',
   },
 ];
-
 
 export const adminActivity = [
   {

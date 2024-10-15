@@ -31,7 +31,7 @@ export default function RootLayout({
         <div className="md:hidden">
           <NavBar />
         </div>
-        <div className="md:col-span-6 bg-bgDarkBlue text-textGrey p-[20px] overflow-y-auto">
+        <div className="md:col-span-6 bg-bgDarkBlue dark:bg-bgDarkGrey text-textGrey dark:text-textDarkGrey p-[20px] overflow-y-auto">
           {children}
         </div>
       </body>

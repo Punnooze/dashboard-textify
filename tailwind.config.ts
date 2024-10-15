@@ -27,14 +27,17 @@ module.exports = {
         cyan: '#00D2FF',
         lightGray: '#A1A7C1',
         green: '#12C09A',
+        greenLight: '#12c05a',
         red: '#E34A6F',
+        redLight: '#e34a4a',
         textGrey: '#D1D5DB',
 
-        bgLight: '#F5F7FA',
-        bgLightGrey: '#E6E9F0',
-        darkerGrey: '#D0D6E2',
-        darkGrey: '#1A1A1A',
-        textDarkGrey: '#4B5563',
+        bgLightGrey: '#f3f6fa', // Lighter background with a slight bluish tone
+        bgDarkGrey: '#dce3eb', // Soft neutral gray for containers or sections
+        darkerGrey: '#e6ebf2', // A darker cool gray that contrasts well with bgLightGrey
+
+        darkGrey: '#6a7486', // Muted dark gray for subtle text and elements
+        textDarkGrey: '#2a343f', // Lighter deep dark gray for high-contrast text
 
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

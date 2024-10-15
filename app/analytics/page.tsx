@@ -11,10 +11,10 @@ import { DataTable } from '@/components/DataTable';
 
 export default function page() {
   return (
-    <div className="bg-bgLightBlue rounded-xl p-[20px]">
+    <div className="bg-bgLightBlue dark:bg-bgLightGrey shadow-md rounded-xl p-[20px]">
       <p className="text-[36px] mb-[20px]">Analytics</p>
       <div className=" mb-[20px] flex flex-col lg:grid  lg:grid-cols-4 gap-[20px]">
-        <div className="md:hidden lg:block bg-darkerBlue rounded-xl p-[20px]">
+        <div className="md:hidden lg:block bg-darkerBlue dark:bg-darkerGrey shadow-md rounded-xl p-[20px]">
           <p className="text-[22px] mb-[20px]">Age Group Distribution</p>
           <DoughnutChart
             dougnutData={[18, 15, 8, 2]}
@@ -44,7 +44,7 @@ export default function page() {
           </div>
         </div>
         <div className="hidden md:flex lg:hidden">
-          <div className="bg-darkerBlue rounded-xl p-[20px]">
+          <div className="bg-darkerBlue dark:bg-darkerGrey shadow-md rounded-xl p-[20px]">
             <p className="text-[22px] mb-[20px]">Age Group Distribution</p>
             <DoughnutChart
               dougnutData={[18, 15, 8, 2]}
@@ -73,9 +73,9 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="ml-[20px] hidden md:block lg:hidden bg-darkerBlue rounded-xl p-[30px]">
+          <div className="ml-[20px] hidden md:block lg:hidden bg-darkerBlue dark:bg-darkerGrey shadow-md rounded-xl p-[30px]">
             <p className="text-[24px] mb-[10px]">Sales Conversion Rate</p>
-            <p className="text-[14px] text-lightGray ">
+            <p className="text-[14px] text-lightGray/50 dark:text-textDarkGrey/60">
               (Amount of visitors who became customers)
             </p>
 
@@ -100,38 +100,38 @@ export default function page() {
             </div>
           </div>
         </div>
-        <div className="bg-darkerBlue rounded-xl md:col-span-3 hidden md:flex flex-col justify-between p-[20px]">
+        <div className="bg-darkerBlue dark:bg-darkerGrey shadow-md rounded-xl md:col-span-3 hidden md:flex flex-col justify-between p-[20px]">
           <p className="text-[22px] mb-[20px]">Sales of Each Category</p>
           <div className="h-full">
             <LineChart />
           </div>
         </div>
 
-        <div className="h-[400px] bg-darkerBlue rounded-xl p-[20px] flex flex-col justify-between md:col-span-3">
+        <div className="h-[400px] bg-darkerBlue dark:bg-darkerGrey shadow-md rounded-xl p-[20px] flex flex-col justify-between md:col-span-3">
           <p className="text-[22px]">Profit from Each Category of products</p>
           <div className="h-[300px] md:h-full">
             <BarChart2 />
           </div>
         </div>
 
-        <div className="md:hidden lg:block bg-darkerBlue rounded-xl p-[30px]">
+        <div className="md:hidden lg:block bg-darkerBlue dark:bg-darkerGrey shadow-md rounded-xl p-[30px]">
           <p className="text-[24px] mb-[10px]">Sales Conversion Rate</p>
           <p className="text-[14px] md:text-[12px] lg:text-[14px] text-lightGray ">
             (Amount of visitors who became customers)
           </p>
 
-          <p className="text-[90px] md:text-[60px] xl:text-[90px] text-red">
+          <p className="text-[90px] md:text-[60px] xl:text-[90px] text-red dark:text-redLight">
             <CountUp
               start={0.0}
               end={3.6}
-              decimals={1} // To have one decimal place
-              duration={2} // Duration of the count-up animation (in seconds)
+              decimals={1}
+              duration={2}
               suffix="%"
             />
           </p>
 
           <div className="flex">
-            <div className="flex px-[5px] items-center bg-red/25 rounded-md text-red">
+            <div className="flex px-[5px] items-center bg-red/25 border-[1px] border-red dark:border-redLight dark:text-redLight dark:bg-redLight/25 rounded-md text-red">
               <FaCaretDown />
               <p className="text-[14px]">28%</p>
             </div>
@@ -142,7 +142,7 @@ export default function page() {
         </div>
 
         <div className="hidden lg:grid col-span-1 gap-[20px]">
-          <div className="bg-darkerBlue p-[20px] rounded-xl">
+          <div className="bg-darkerBlue dark:bg-darkerGrey shadow-md p-[20px] rounded-xl">
             <p className="text-[22px] mb-[40px]">Device Type</p>
             <div className="flex items-center mb-[20px]">
               <CountUp
@@ -175,7 +175,7 @@ export default function page() {
               <p>Desktop Devices</p>
             </div>
           </div>
-          <div className="bg-darkerBlue p-[20px] rounded-xl">
+          <div className="bg-darkerBlue dark:bg-darkerGrey shadow-md p-[20px] rounded-xl">
             <p className="text-[22px] mb-[20px]">Abandoned Cart</p>
             <CountUp
               start={0.0}
@@ -187,13 +187,13 @@ export default function page() {
             />
           </div>
         </div>
-        <div className="md:col-span-4 lg:col-span-3 bg-darkerBlue p-[20px] rounded-xl">
+        <div className="md:col-span-4 lg:col-span-3 bg-darkerBlue dark:bg-darkerGrey shadow-md p-[20px] rounded-xl">
           <p className="text-[22px] mb-[20px]">Products with Low Stock</p>
           <DataTable columns={columns2} data={stockData} />
         </div>
 
         <div className="col-span-4 grid grid-cols-4 gap-[20px]">
-          <div className="bg-darkerBlue rounded-xl p-[20px] col-span-4">
+          <div className="bg-darkerBlue dark:bg-darkerGrey shadow-md rounded-xl p-[20px] col-span-4">
             <p className="text-[22px] mb-[20px]">Top Selling Products</p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 overflow-auto gap-[20px]">
               {products.map((item, index) => (

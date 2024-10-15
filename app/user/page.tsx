@@ -35,12 +35,12 @@ export default function Page() {
   };
 
   return (
-    <div className="bg-bgLightBlue p-[20px] rounded-xl grid grid-cols-4 gap-[20px]">
+    <div className="bg-bgLightBlue dark:bg-bgLightGrey shadow-md  p-[20px] rounded-xl grid grid-cols-4 gap-[20px]">
       <div className="col-span-4 lg:col-span-3 ">
         <p id="activityTable" className="text-[36px] mb-[20px]">
           User Profiles
         </p>
-        <div className="bg-darkerBlue p-[20px] rounded-xl ">
+        <div className="bg-darkerBlue dark:bg-darkerGrey shadow-md p-[20px] rounded-xl ">
           <div className="flex justify-between items-center">
             <p className="text-[22px] mb-[20px]">Recent Activity Logs</p>
             <div>
@@ -50,7 +50,7 @@ export default function Page() {
                   value={userId || ''}
                   placeholder="User ID"
                   onChange={(e) => setUserId(e.target.value)}
-                  className="bg-darkerBlue px-4 py-2 focus:outline-none focus:ring-0 w-[150px] pl-[20px]"
+                  className="bg-darkerBlue dark:bg-darkerGrey px-4 py-2 focus:outline-none focus:ring-0 w-[150px] pl-[20px]"
                 />
               </div>
             </div>
@@ -60,16 +60,16 @@ export default function Page() {
         </div>
       </div>
       <div className="flex flex-col gap-[20px] col-span-2 lg:col-span-1">
-        <div className="hidden lg:block bg-darkerBlue p-[20px] rounded-xl">
+        <div className="hidden lg:block bg-darkerBlue dark:bg-darkerGrey shadow-md p-[20px] rounded-xl">
           <p className="text-[22px] mb-[10px]">Active Customers</p>
           <CountUp
             start={0}
             end={159}
             duration={1.5}
-            className="text-[31px] text-chartGreen"
+            className="text-[31px] text-green dark:text-greenLight"
           />
         </div>
-        <div className="bg-darkerBlue p-[20px] rounded-xl">
+        <div className="bg-darkerBlue dark:bg-darkerGrey shadow-md p-[20px] rounded-xl">
           <p className="col-span-2 md:col-span-1 text-[22px] mb-[10px]">
             User Engagement
           </p>
@@ -99,7 +99,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="bg-darkerBlue p-[20px] rounded-xl flex flex-col col-span-2 lg:col-span-1">
+      <div className="bg-darkerBlue dark:bg-darkerGrey shadow-md p-[20px] rounded-xl flex flex-col col-span-2 lg:col-span-1">
         <p className="mb-[20px] text-[16] lg:text-[22px]">
           Active vs Inactive Users
         </p>
@@ -122,46 +122,51 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="col-span-4 lg:col-span-3 bg-darkerBlue p-[20px] rounded-xl ">
+      <div className="col-span-4 lg:col-span-3 bg-darkerBlue dark:bg-darkerGrey shadow-md p-[20px] rounded-xl ">
         <p className="text-[22px] mb-[20px] ">User Details</p>
-        <div className="overflow-x-auto rounded-xl rounded-r-none border-textGrey border border-textGrey-textGrey overflow-y-auto h-[350px] text-[12px] md:text-[14px] lg:text-[16px]">
-          <table className="min-w-full  border border-textGrey-accentPurple">
-            <thead className="bg-textGrey">
+        <div className="overflow-x-auto rounded-xl rounded-r-none border-textGrey border dark:border-darkerBlue overflow-y-auto h-[350px] text-[12px] md:text-[14px] lg:text-[16px]">
+          <table className="min-w-full border border-textGrey dark:border-darkerBlue">
+            <thead className="bg-chartBlue/50  dark:bg-bgLightGrey">
               <tr>
-                <th className="py-2 px-4 border border-white text-left text-darkBlue">
+                <th className="py-2 px-4 border-l border-textGrey  text-left bg-chartBlue/50  dark:bg-darkerBlue text-[14px] text-textGrey dark:text-textGrey rounded-l-xl rounded-b-none">
                   User ID
                 </th>
-                <th className="py-2 px-4 border border-white text-left text-darkBlue">
+                <th className="py-2 px-4 border-l border-textGrey  text-left bg-chartBlue/50  dark:bg-darkerBlue text-[14px] text-textGrey dark:text-textGrey">
                   User Name
                 </th>
-                <th className="py-2 px-4 border border-white text-left text-darkBlue">
+                <th className="py-2 px-4 border-l border-textGrey  text-left bg-chartBlue/50  dark:bg-darkerBlue text-[14px] text-textGrey dark:text-textGrey">
                   Email
                 </th>
-                <th className="py-2 px-4 border border-white text-left text-darkBlue">
+                <th className="py-2 px-4 border-l border-textGrey  text-left bg-chartBlue/50  dark:bg-darkerBlue text-[14px] text-textGrey dark:text-textGrey">
                   Account Creation
                 </th>
-                <th className="py-2 px-4 border border-white text-left text-darkBlue">
+                <th className="py-2 px-4 border-l border-textGrey  text-left bg-chartBlue/50  dark:bg-darkerBlue text-[14px] text-textGrey dark:text-textGrey">
                   Status
                 </th>
-                <th className="py-2 px-4 border border-white text-left text-textGrey"></th>
+                <th className="py-2 px-4 border-l border-textGrey  text-left bg-chartBlue/50  dark:bg-darkerBlue text-[14px] text-textGrey dark:text-textGrey"></th>
               </tr>
             </thead>
             <tbody>
               {users.map((user: User, index: number) => (
-                <tr key={index} className="hover:bg-textGrey/10 ">
-                  <td className="py-2 px-4 border border-textGrey">
+                <tr
+                  key={index}
+                  className="hover:bg-chartBlue/20 dark:hover:bg-darkerBlue/20 "
+                >
+                  <td className="py-2 px-4 border border-textGrey dark:border-darkerBlue ">
                     {user.userId}
                   </td>
-                  <td className="py-2 px-4 border border-textGrey">
+                  <td className="py-2 px-4 border border-textGrey dark:border-darkerBlue ">
                     {user.userName}
                   </td>
-                  <td className="py-2 px-4 border border-textGrey">
+                  <td className="py-2 px-4 border border-textGrey dark:border-darkerBlue ">
                     {user.email}
                   </td>
-                  <td className="py-2 px-4 border border-textGrey">
+                  <td className="py-2 px-4 border border-textGrey dark:border-darkerBlue ">
                     {user.accountCreationDate}
                   </td>
-                  <td className={`py-2 px-4 border border-textGrey  `}>
+                  <td
+                    className={`py-2 px-4 border border-textGrey dark:border-darkerBlue   `}
+                  >
                     <div className="flex items-center">
                       <div
                         className={`h-[10px] w-[10px] rounded-full ${
@@ -171,9 +176,9 @@ export default function Page() {
                       {user.status}
                     </div>
                   </td>
-                  <td className="py-2 px-4 border border-textGrey">
+                  <td className="py-2 px-4 border border-textGrey dark:border-darkerBlue ">
                     <DropdownMenu>
-                      <DropdownMenuTrigger className="bg-textGrey/20 p-[5px] rounded-full hover:bg-textGrey/10">
+                      <DropdownMenuTrigger className="bg-textGrey/20 p-[5px] rounded-full hover:bg-textGrey/10 dark:bg-textDarkGrey/20 dark:hover:bg-textDarkGrey/10">
                         <PiDotsThreeBold className="cursor-pointer" />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="">
