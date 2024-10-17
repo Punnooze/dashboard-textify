@@ -24,14 +24,17 @@ export default function Card({ product }: ProductType) {
         <p className="text-[14px] mb-[5px]">{product.productName}</p>
         <Image src={fallback} alt="product" className="rounded-lg mb-[10px] " />
       </div>
+
       <div className="text-textGrey dark:text-textDarkGrey text-[14px]">
         <p className="text-[13px]">{product.category}</p>
         <p className="text-[12px] mb-[10px]">{product.drop}</p>
+
+        <p className="text-[14px]">
+          Units sold : <span className="font-bold">{product.unitsSold}</span>
+        </p>
+
         <div className="flex justify-between items-center">
           <p>₹{product.price}</p>
-          <p>
-            sold : <span className="font-bold">{product.unitsSold}</span>
-          </p>
 
           <div className="flex items-center">
             <div
