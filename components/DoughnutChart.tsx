@@ -1,13 +1,12 @@
 'use client';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-// import { dougnutData } from '@/utils/data';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface DoughnutProps {
   dougnutData: number[];
-  doughnutLabels: string[]; // Expecting an array of numbers
+  doughnutLabels: string[]; 
 }
 
 export default function DoughnutChart({
@@ -42,10 +41,9 @@ export default function DoughnutChart({
     plugins: {
       legend: {
         display: false,
-        // position: 'top' as const, // Fixes TypeScript error by asserting the literal type
       },
     },
-    cutout: 70, // Use number instead of string for the cutout value
+    cutout: 70, 
   };
 
   return (

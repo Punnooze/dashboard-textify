@@ -13,7 +13,6 @@ import {
 } from 'chart.js';
 import { productData } from '../utils/data';
 
-// Register the necessary chart elements for a line chart
 ChartJS.register(
   LineElement,
   BarElement,
@@ -33,29 +32,25 @@ export default function LineChart() {
       setIsDarkMode(isDark);
     };
 
-    // Initial check
     checkDarkMode();
 
-    // Add an event listener to monitor class changes
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.documentElement, { attributes: true });
 
-    // Cleanup on unmount
     return () => {
       observer.disconnect();
     };
   }, []);
 
-  // Format the product performance data for the line chart
   const data1 = {
-    labels: productData.map((item) => item.month), // Months for the x-axis
+    labels: productData.map((item) => item.month), 
     datasets: [
       {
         label: 'Oversized T-shirt Sales',
-        data: productData.map((item) => item.oversizedTshirt.sales), // Oversized T-shirt sales data
+        data: productData.map((item) => item.oversizedTshirt.sales), 
         borderColor: isDarkMode
           ? 'rgba(255, 159, 64, 1)'
-          : 'rgba(54, 162, 235, 1)', // Dark mode orange, Light mode blue
+          : 'rgba(54, 162, 235, 1)',
         backgroundColor: isDarkMode
           ? 'rgba(255, 159, 64, 0.5)'
           : 'rgba(54, 162, 235, 0.5)',
@@ -64,10 +59,10 @@ export default function LineChart() {
       },
       {
         label: 'Shirt Sales',
-        data: productData.map((item) => item.shirt.sales), // Shirt sales data
+        data: productData.map((item) => item.shirt.sales), 
         borderColor: isDarkMode
           ? 'rgba(255, 206, 86, 1)'
-          : 'rgba(255, 99, 132, 1)', // Dark mode yellow, Light mode red
+          : 'rgba(255, 99, 132, 1)', 
         backgroundColor: isDarkMode
           ? 'rgba(255, 206, 86, 0.5)'
           : 'rgba(255, 99, 132, 0.5)',
@@ -76,10 +71,10 @@ export default function LineChart() {
       },
       {
         label: 'Pants Sales',
-        data: productData.map((item) => item.pants.sales), // Pants sales data
+        data: productData.map((item) => item.pants.sales), 
         borderColor: isDarkMode
           ? 'rgba(75, 192, 192, 1)'
-          : 'rgba(75, 192, 192, 1)', // Same teal for both modes
+          : 'rgba(75, 192, 192, 1)',
         backgroundColor: isDarkMode
           ? 'rgba(75, 192, 192, 0.5)'
           : 'rgba(75, 192, 192, 0.5)',
@@ -88,10 +83,10 @@ export default function LineChart() {
       },
       {
         label: 'Hoodies Sales',
-        data: productData.map((item) => item.hoodies.sales), // Hoodies sales data
+        data: productData.map((item) => item.hoodies.sales),
         borderColor: isDarkMode
           ? 'rgba(153, 102, 255, 1)'
-          : 'rgba(153, 102, 255, 1)', // Same purple for both modes
+          : 'rgba(153, 102, 255, 1)', 
         backgroundColor: isDarkMode
           ? 'rgba(153, 102, 255, 0.5)'
           : 'rgba(153, 102, 255, 0.5)',
@@ -106,28 +101,28 @@ export default function LineChart() {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top' as const, // Legend at the top
+        position: 'top' as const, 
         labels: {
-          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', // Legend text color
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', 
         },
       },
     },
     scales: {
       x: {
-        beginAtZero: true, // Start x-axis at 0
+        beginAtZero: true,
         ticks: {
-          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', // X-axis labels text color
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
         },
       },
       y: {
-        beginAtZero: true, // Start y-axis at 0
+        beginAtZero: true,
         title: {
           display: true,
           text: 'Sales',
-          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', // Y-axis title text color
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', 
         },
         ticks: {
-          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)', // Y-axis labels text color
+          color: isDarkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
         },
       },
     },

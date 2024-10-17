@@ -310,7 +310,7 @@ export const stockData = [
     category: 'Hoodies',
     price: 1499,
     stockRemaining: 20,
-    stockStatus: 'high',
+    stockStatus: 'medium',
   },
 ];
 

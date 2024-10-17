@@ -83,8 +83,8 @@ export default function page() {
               <CountUp
                 start={0.0}
                 end={3.6}
-                decimals={1} // To have one decimal place
-                duration={2} // Duration of the count-up animation (in seconds)
+                decimals={1} 
+                duration={2} 
                 suffix="%"
               />
             </p>

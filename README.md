@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ecommerce Dashboard
 
-## Getting Started
+This is an ecommerce dashboard project created and designed by Punnoose Punnen. It features a user-friendly design with cohesive colors and the ability to switch between light and dark modes (with dark mode enabled by default). The dashboard is fully responsive, ensuring that all functionalities are available on any screen size.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Home Page
+The home page provides an overview of the ecommerce platform's performance, including:
+- Yearly overview of sales and profits
+- Monthly revenue
+- Monthly orders and new customers
+- Order status tracking
+- Recent orders
+- Average order value over the past week
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Analytics Page
+The analytics page helps visualize the performance of various product categories and demographic insights:
+- Age group distribution of customers
+- Sales of each product category (Oversized T-shirts, Shirts, Pants, Hoodies)
+- Profits by product category
+- Products with low stock are highlighted
+- Top 5 selling products
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. User Profile Page
+The user profile page allows you to:
+- View recent activity logs of all users on the website
+- Access a table displaying all users, with the ability to select a user to view their detailed activity logs
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Settings Page
+The settings page is where administrators can:
+- Update personal information
+- View the complete log of all actions taken by administrators with access to the platform
 
-## Learn More
+## Design and Responsiveness
 
-To learn more about Next.js, take a look at the following resources:
+This dashboard is designed with cohesive colors and smooth navigation in mind. It is fully responsive, offering all functionalities across various screen sizes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Dark Mode**: Enabled by default with the option to switch to light mode.
+- **Responsive**: Optimized for mobile, tablet, and desktop views.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How to Access
 
-## Deploy on Vercel
+- **Figma Design**: [Link to Figma Design](#)
+- **Live Demo**: [Link to Public Deployment](#)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend**: NextJS 13
+- **Design**: Figma
+

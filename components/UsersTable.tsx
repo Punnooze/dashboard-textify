@@ -4,7 +4,7 @@ interface User {
   userId: string;
   userName: string;
   email: string;
-  accountCreationDate: string; // Updated field
+  accountCreationDate: string; 
   status: string;
 }
 
